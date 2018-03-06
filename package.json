@@ -50,6 +50,7 @@
     "ts-loader": "^2.0.3",
     "typescript": "^2.4.2",
     "webpack": "^2.2.1",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "handlebars": "^4.0.0"
   }
 }
