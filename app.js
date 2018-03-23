@@ -8,10 +8,12 @@ var mongoose = require('mongoose');
 
 var appRoutes = require('./routes/app');
 var messageRoutes = require('./routes/messages');
+var channelRoutes = require('./routes/channels');
 var userRoutes = require('./routes/user');
 
 var app = express();
-mongoose.connect('localhost:27017/node-angular');
+// to move the user name and password to Env variables
+mongoose.connect('mongodb://localhost:27017/node-angular');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,6 +35,7 @@ app.use(function (req, res, next) {
 });
 
 app.use('/message', messageRoutes);
+app.use('/channel', channelRoutes);
 app.use('/user', userRoutes);
 app.use('/', appRoutes);
 

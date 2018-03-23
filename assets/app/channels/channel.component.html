@@ -1,0 +1,12 @@
+<mat-card [routerLink]="['/channels', channel.channelId, 'messages'] ">
+    <div class="channelWrap">
+        <div>{{ channel.name }}</div>
+          <img [src]= "channel.imgUrl" class="channelImg">
+    </div>
+        <!-- <div class="config" >
+            <a (click)="onEdit()">Edit</a>
+            <a (click)="onDelete()">Delete</a>
+        </div> -->
+</mat-card>
+
+<!-- [routerLink]=['/channels', channel.channelId, 'messages'] -->

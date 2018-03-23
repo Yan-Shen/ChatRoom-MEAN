@@ -3,18 +3,21 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node server.js",
     "build": "del-cli public/js/app && webpack --config webpack.config.dev.js --progress --profile --watch",
+    "start-dev": " npm run build & npm run start",
     "build:prod": "del-cli public/js/app && ngc -p tsconfig.aot.json && ngc -p tsconfig.aot.json && webpack --config webpack.config.prod.js --progress --profile --bail && del-cli 'assets/app/**/*.js' 'assets/app/**/*.ngsummary.json' 'assets/app/**/*.ngstyle.*'"
   },
   "dependencies": {
-    "@angular/animations": "^5.0.0",
+    "@angular/animations": "^5.2.8",
+    "@angular/cdk": "^5.2.4",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
     "@angular/compiler-cli": "^5.0.0",
     "@angular/core": "^5.0.0",
     "@angular/forms": "^5.0.0",
     "@angular/http": "^5.0.0",
+    "@angular/material": "^5.2.4",
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/platform-server": "^5.0.0",
@@ -38,6 +41,7 @@
     "zone.js": "^0.8.5"
   },
   "devDependencies": {
+    "@angular/cli": "^1.7.3",
     "@ngtools/webpack": "^1.8.0",
     "@types/core-js": "0.9.36",
     "@types/node": "^6.0.45",
@@ -45,12 +49,12 @@
     "angular2-template-loader": "^0.5.0",
     "awesome-typescript-loader": "^3.1.2",
     "del-cli": "^0.2.0",
+    "handlebars": "^4.0.0",
     "html-loader": "^0.4.4",
     "raw-loader": "^0.5.1",
     "ts-loader": "^2.0.3",
     "typescript": "^2.4.2",
     "webpack": "^2.2.1",
-    "webpack-merge": "^4.1.0",
-    "handlebars": "^4.0.0"
+    "webpack-merge": "^4.1.0"
   }
 }

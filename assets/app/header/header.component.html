@@ -1,0 +1,26 @@
+<header class="headerContainer">
+  <div class="button-row headerWrap">
+          <!-- <li routerLinkActive="active"><a [routerLink]="['/messages']">Messenger</a></li> -->
+          <!-- <a mat-button class="headerButton" [routerLink]="['/messages']">CHAT ROOM</a> -->
+      <h2 class="brandNameWrap">YouChat</h2>
+      <button mat-icon-button [matMenuTriggerFor]="menu" id="menuIconBtn">
+          <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu"
+      overlapTrigger="false">
+
+        <a mat-button class="headerButton" *ngIf="isLoggedIn()"[routerLink]="['/channels']">CHANNELS</a>
+        <a mat-button class="headerButton" *ngIf="!isLoggedIn()"[routerLink]="['/auth/signup']">SIGNUP</a>
+        <a mat-button class="headerButton" *ngIf="!isLoggedIn()"[routerLink]="['/auth/signin']">SIGNIN</a>
+        <a mat-button
+          class="headerButton"
+          *ngIf="isLoggedIn()"
+          (click)="onLogout()"
+          [routerLink]="['/auth/logout']">
+        LOGOUT
+        </a>
+
+      </mat-menu>
+  </div>
+</header>
+

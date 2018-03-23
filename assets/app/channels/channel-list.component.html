@@ -1,0 +1,13 @@
+<div class="channelContainer">
+  <mat-card id="addChannelWrap">
+  <h3 id="channelTitle">CHANNEL</h3>
+  <a [routerLink]="['/channels/add']">
+    <i class="material-icons iconAdd">add_circle_outline</i>
+  </a>
+  </mat-card>
+  <app-channel
+         [channel]="channel"
+          *ngFor="let channel of channels"></app-channel>
+</div>
+
+<!-- <a mat-button class="headerButton" *ngIf="!isLoggedIn()"[routerLink]="['/auth/signup']">SIGNUP</a> -->

@@ -1,27 +1,160 @@
+
 body {
-  padding: 50px;
+  padding: 20px 30px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
-  cursor: pointer;
-}
-
-a:hover,
-a:active {
+/* a:hover, */
+/* a:active {
   color: #00B7FF;
   text-decoration: underline;
-}
+} */
 
-a.danger {
+/* a.danger {
   color: red;
 }
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+} */
 
-.spacing {
+/*---------------------- HEADER SECTION -------------------- */
+
+.headerContainer {
+  background-color: #ffb7cf;
   margin-bottom: 20px;
 }
 
-input.ng-invalid.ng-touched {
-  border: 1px solid red;
+.headerWrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.headerButton {
+  width: 100%;
+}
+
+.brandNameWrap {
+  width: 40%;
+  padding-left: 8%;
+  box-sizing: border-box;
+}
+
+#menuIconBtn {
+  width: 60%;
+  text-align: right;
+  padding-right: 5%;
+}
+
+/*---------------------- Signup/Signin --------------------- */
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputWrap {
+  width: 100%;
+}
+
+
+
+/*---------------------- Channel --------------------- */
+
+.channelImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+#addChannelWrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 18px;
+  margin-bottom: 15px;
+  background-color: grey;
+  color: white
+}
+
+#channelTitle{
+  display: inline-block;
+  width: 60%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.iconAdd{
+  width: 40%;
+  text-align: right;
+}
+.channelWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.channelAddBtnWrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.channelAddBtnWrap button {
+  margin: auto 5px;
+
+}
+
+/*---------------------- MESSAGE --------------------- */
+
+.inputWrap {
+  width: 100%;
+  border-style: inset;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  min-height: 35px;
+}
+
+.inputContainer{
+  width: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  bottom: 50px;
+  left: 0px;
+  padding-right: 30px;
+  padding-left: 30px;
+
+}
+
+#input {
+  width: 100%;
+  /* margin-right: 7%;
+  margin-left: 7%; */
+
+  box-sizing: border-box;
+}
+
+.messageWrap{
+  display: flex;
+  min-height: 25px;
+}
+
+.user {
+  width: 20%
+}
+
+.messageContent{
+  width: 80%;
+}
+
+.expandWrap{
+  text-align: right;
+}
+
+#expandBtn{
+  height: 0px;
+}
+
+.messageEditWrap{
+  display: flex;
+  justify-content: flex-end;
 }

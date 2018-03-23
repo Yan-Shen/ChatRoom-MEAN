@@ -8,9 +8,11 @@ import { User } from "./user.model";
     selector: 'app-signup',
     templateUrl: './signup.component.html'
 })
+
 export class SignupComponent implements OnInit {
     myForm: FormGroup;
 
+    // use constructor for dependency injection
     constructor(private authService: AuthService) {}
 
     onSubmit() {
