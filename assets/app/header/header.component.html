@@ -10,6 +10,7 @@
       overlapTrigger="false">
 
         <a mat-button class="headerButton" *ngIf="isLoggedIn()"[routerLink]="['/channels']">CHANNELS</a>
+        <a mat-button class="headerButton" *ngIf="isLoggedIn()">PROFILE</a>
         <a mat-button class="headerButton" *ngIf="!isLoggedIn()"[routerLink]="['/auth/signup']">SIGNUP</a>
         <a mat-button class="headerButton" *ngIf="!isLoggedIn()"[routerLink]="['/auth/signin']">SIGNIN</a>
         <a mat-button

@@ -19,6 +19,7 @@ export class SigninComponent {
         this.authService.signin(user)
             .subscribe(
                 data => {
+                    console.log('signin data------', data)
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('userId', data.userId);
                     this.router.navigateByUrl('/channels');

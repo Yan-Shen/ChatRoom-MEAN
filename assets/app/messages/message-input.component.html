@@ -1,9 +1,9 @@
 
-    <form class="inputContainer" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <form  (ngSubmit)="onSubmit(f)" #f="ngForm">
 
         <div class="inputWrap">
-            <div class="expandWrap">
-                <button
+            <!-- <div class="expandWrap"> -->
+                <!-- <button
                 id="expandBtn"
                 mat-icon-button
                 [matMenuTriggerFor]="menu" >
@@ -11,10 +11,10 @@
                 </button>
                 <mat-menu #menu="matMenu"
                 overlapTrigger="false">
-                    <button class="headerButton" (click)="onClear(f)">Clear</button>
-                    <button class="headerButton" type="submit">Save</button>
+                    <button class="headerButton" (click)="onClear(f)">Clear</button> -->
+                    <!-- <button class="headerButton" type="submit" >Save</button>
                 </mat-menu>
-            </div>
+            </div> -->
             <textarea
                 placeholder="Enter chat"
                 type="text"
@@ -24,8 +24,8 @@
                 required>
             </textarea>
         </div>
-        <!-- <button type="button" mat-raised-button color="warn"  (click)="onClear(f)">Clear</button> -->
-        <!-- <button mat-raised-button color="accent" type="submit">Save</button> -->
+        <button type="button" mat-raised-button color="warn"  (click)="onClear(f)">Clear</button>
+         <button mat-raised-button color="accent" type="submit">Save</button>
 
     </form>
 

@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from "@angular/http";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+// import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FormsModule} from '@angular/forms';
 import {MatButtonModule, MatCardModule} from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
@@ -28,7 +30,8 @@ import { AuthService } from "./auth/auth.service";
         ChannelsComponent
     ],
     imports: [
-        ReactiveFormsModule,
+        FormsModule,
+        CommonModule,
         BrowserModule,
         routing,
         HttpModule,
@@ -38,6 +41,7 @@ import { AuthService } from "./auth/auth.service";
         MatCardModule,
         MatButtonModule,
     ],
+    // this will make error service and authservice one instance available to all components in this module
     providers: [ErrorService, AuthService],
     bootstrap: [AppComponent]
 })

@@ -1,4 +1,4 @@
-<mat-card [routerLink]="['/channels', channel.channelId, 'messages'] ">
+<mat-card [routerLink]="['/channels','messages']" [queryParams]="{channelId: channel.channelId}">
     <div class="channelWrap">
         <div>{{ channel.name }}</div>
           <img [src]= "channel.imgUrl" class="channelImg">
@@ -9,4 +9,3 @@
         </div> -->
 </mat-card>
 
-<!-- [routerLink]=['/channels', channel.channelId, 'messages'] -->

@@ -14,6 +14,7 @@ export class MessageInputComponent implements OnInit {
     constructor(private messageService: MessageService) {}
 
     onSubmit(form: NgForm) {
+        console.log('this.message------', this.message)
         if (this.message) {
             // Edit
             this.message.content = form.value.content;

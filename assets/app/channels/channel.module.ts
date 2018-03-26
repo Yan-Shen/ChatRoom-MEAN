@@ -9,6 +9,8 @@ import {MatFormFieldModule  } from '@angular/material/form-field';
 import { ChannelListComponent } from "./channel-list.component";
 import { ChannelComponent } from "./channel.component";
 import { ChannelInputComponent } from "./channel-input.component";
+import { ChannelDetailsComponent } from "./channel-details.component";
+import { ChannelSidebarComponent } from "./channel-sidebar.component"
 import { ChannelService } from "./channel.service";
 import { channelRouting} from "./channel.routing";
 import { MessagesComponent } from "../messages/messages.component"
@@ -23,10 +25,13 @@ import { MessageService } from "../messages/message.service";
         ChannelListComponent,
         ChannelComponent,
         ChannelInputComponent,
+        ChannelDetailsComponent,
+        ChannelSidebarComponent,
         MessagesComponent,
         MessageListComponent,
         MessageInputComponent,
-        MessageComponent
+        MessageComponent,
+
     ],
     imports: [
         CommonModule,

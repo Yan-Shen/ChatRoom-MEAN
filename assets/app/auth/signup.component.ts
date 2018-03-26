@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 
 import { AuthService } from "./auth.service";
 import { User } from "./user.model";
@@ -13,7 +14,7 @@ export class SignupComponent implements OnInit {
     myForm: FormGroup;
 
     // use constructor for dependency injection
-    constructor(private authService: AuthService) {}
+    constructor(private authService: AuthService, private router: Router) {}
 
     onSubmit() {
         const user = new User(
@@ -24,7 +25,10 @@ export class SignupComponent implements OnInit {
         );
         this.authService.signup(user)
             .subscribe(
-                data => console.log(data),
+                data => {
+                    console.log(data);
+                    this.router.navigateByUrl('/auth/signin');
+                },
                 error => console.error(error)
             );
         this.myForm.reset();
