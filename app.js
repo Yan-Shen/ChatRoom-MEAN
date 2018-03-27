@@ -12,8 +12,12 @@ var channelRoutes = require('./routes/channels');
 var userRoutes = require('./routes/user');
 
 var app = express();
+var connectionUrl = 'mongodb://guinness:bone111@ds123919.mlab.com:23919/youchat'
+// 'mongodb://localhost:27017/node-angular'
 // to move the user name and password to Env variables
-mongoose.connect('mongodb://localhost:27017/node-angular');
+mongoose.connect(connectionUrl);
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -168,7 +168,8 @@ input.ng-invalid.ng-touched {
 }
 
 .user {
-  width: 20%
+  width: 20%;
+  min-width: 60px;
 }
 
 .messageContent{
