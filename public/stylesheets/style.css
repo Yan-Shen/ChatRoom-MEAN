@@ -2,6 +2,7 @@
 body {
   padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin:0;
 }
 
 /* a:hover, */
@@ -19,7 +20,7 @@ input.ng-invalid.ng-touched {
 
 .container{
   margin: 0px auto;
-  padding: 0px 30px;
+  /* padding: 0px 0px; */
 }
 
 /*---------------------- HEADER SECTION -------------------- */
@@ -53,6 +54,12 @@ input.ng-invalid.ng-touched {
 }
 
 /*---------------------- Signup/Signin --------------------- */
+.authenticationContainer{
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
@@ -120,16 +127,30 @@ input.ng-invalid.ng-touched {
 }
 
 .channelSidebarContainer{
-  background-color: aqua;
+  background-color:#cbcec8;
   position: absolute;
   transform: translate(-800px, 0);
   width: 20%;
   height: calc(100vh - 108px);
+  padding-left: 10px;
 }
 
+.channelName{
+  height: 40px;
+}
+
+#userName {
+  text-align: center;
+  margin-top: 0;
+}
+
+#channel{
+  text-align: center;
+  margin-bottom: 0;
+}
 /*---------------------- MESSAGE --------------------- */
 .messagesContainer{
-  width: 80%;
+  width: 100%;
   padding: 20px;
 }
 
@@ -169,7 +190,12 @@ input.ng-invalid.ng-touched {
 
 .user {
   width: 20%;
-  min-width: 60px;
+  min-width: 70px;
+}
+
+.user.active{
+  color: green;
+  font-weight: 400;
 }
 
 .messageContent{
@@ -192,7 +218,12 @@ input.ng-invalid.ng-touched {
 /*---------------------- MEDIA QUERY --------------------- */
 @media screen and (min-width: 600px) {
   .container{
-    width: 80%;
+    /* width: 80%; */
+  }
+  .authenticationContainer .channelContainer{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -206,14 +237,25 @@ input.ng-invalid.ng-touched {
   }
   .inputContainer{
     width: 64%;
-    margin-left: 26%;
+    margin-left: 20%;
 
+  }
+  .authenticationContainer .channelContainer{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .container{
-    /* width: 50%; */
+    /* width: 60%; */
     /* margin: 80px auto; */
+  }
+  .authenticationContainer {
+    width: 40%;
+  }
+  .channelContainer{
+    width: 60%;
   }
 }

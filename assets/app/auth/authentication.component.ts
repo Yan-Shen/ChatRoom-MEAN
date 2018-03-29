@@ -4,7 +4,7 @@ import { AuthService } from "./auth.service";
 @Component({
     selector: 'app-authentication',
     template: `
-    <div>
+    <div class="authenticationContainer">
         <router-outlet></router-outlet>
     </div>
     `

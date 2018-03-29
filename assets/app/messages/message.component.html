@@ -1,5 +1,5 @@
 <div class="messageWrap">
-    <div class="user">
+    <div class="user" [class.active]="belongsToUser()">
         {{ message.username }} :
     </div>
     <div class="messageContent">
