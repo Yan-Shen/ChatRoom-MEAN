@@ -4,31 +4,11 @@ import { Router } from "@angular/router";
 import { ViewChild } from '@angular/core';
 
 @Component({
-    selector: 'app-header-menu',
-    templateUrl: `
-
-      <button mat-icon-button
-      [matMenuTriggerFor]="menu"
-      id="menuIconBtn">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu" overlapTrigger="false">
-        <a mat-button class="headerButton" *ngIf="isLoggedIn()"[routerLink]="['/channels']">CHANNELS</a>
-        <a mat-button class="headerButton" *ngIf="isLoggedIn()">PROFILE</a>
-        <a mat-button class="headerButton" *ngIf="!isLoggedIn()"[routerLink]="['/auth/signup']">SIGNUP</a>
-        <a mat-button class="headerButton" *ngIf="!isLoggedIn()"[routerLink]="['/auth/signin']">SIGNIN</a>
-        <a mat-button
-          class="headerButton"
-          *ngIf="isLoggedIn()"
-          (click)="onLogout()"
-          [routerLink]="['/auth/logout']">
-        LOGOUT
-        </a>
-      </mat-menu>
-    `
+    selector: 'app-header-menu-frontpage',
+    templateUrl: './menu-frontpage.component.html'
 })
 
-export class HeaderMenuComponent {
+export class HeaderMenuFrontpageComponent {
   // @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
   // someMethod() {

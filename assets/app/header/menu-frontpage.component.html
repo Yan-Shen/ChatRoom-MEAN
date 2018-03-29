@@ -1,0 +1,35 @@
+
+          <button class="navLink" *ngIf="!isLoggedIn()">Why Youchat</button>
+          <button class="navLink" *ngIf="!isLoggedIn()">Future Plan</button>
+          <button *ngIf="!isLoggedIn()">Your Chatroom</button>
+          <a mat-button class="headerButton" *ngIf="isLoggedIn()"[routerLink]="['/channels']">CHANNELS</a>
+          <a mat-button class="headerButton" *ngIf="isLoggedIn()">PROFILE</a>
+          <a mat-button
+          class="headerButton"
+          *ngIf="isLoggedIn()"
+          (click)="onLogout()"
+          [routerLink]="['/auth/logout']">
+        LOGOUT
+        </a>
+
+
+
+
+      <!-- <button mat-icon-button
+      [matMenuTriggerFor]="menu"
+      id="menuIconBtn">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" overlapTrigger="false">
+        <a mat-button class="headerButton" *ngIf="isLoggedIn()"[routerLink]="['/channels']">CHANNELS</a>
+        <a mat-button class="headerButton" *ngIf="isLoggedIn()">PROFILE</a>
+        <a mat-button class="headerButton" *ngIf="!isLoggedIn()"[routerLink]="['/auth/signup']">SIGNUP</a>
+        <a mat-button class="headerButton" *ngIf="!isLoggedIn()"[routerLink]="['/auth/signin']">SIGNIN</a>
+        <a mat-button
+          class="headerButton"
+          *ngIf="isLoggedIn()"
+          (click)="onLogout()"
+          [routerLink]="['/auth/logout']">
+        LOGOUT
+        </a>
+      </mat-menu> -->

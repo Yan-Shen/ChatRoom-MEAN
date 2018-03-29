@@ -11,9 +11,10 @@ import {MatIconModule} from '@angular/material/icon';
 
 
 import { AppComponent } from "./app.component";
+import {FrontpageComponent} from "./frontpage/frontpage.component";
 import { AuthenticationComponent } from "./auth/authentication.component";
 import { HeaderComponent } from "./header/header.component";
-import { HeaderMenuComponent } from "./header/menu.component"
+import { HeaderMenuFrontpageComponent } from "./header/menu-frontpage.component"
 import {ChannelsComponent} from "./channels/channels.component";
 import { ErrorComponent } from "./errors/error.component";
 
@@ -27,9 +28,10 @@ import { AuthService } from "./auth/auth.service";
         AppComponent,
         AuthenticationComponent,
         HeaderComponent,
-        HeaderMenuComponent,
+        HeaderMenuFrontpageComponent,
         ErrorComponent,
-        ChannelsComponent
+        ChannelsComponent,
+        FrontpageComponent
     ],
     imports: [
         FormsModule,
