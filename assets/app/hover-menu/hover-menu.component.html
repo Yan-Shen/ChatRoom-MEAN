@@ -1,6 +1,7 @@
 <div class="hoverMenuContainer">
   <div class="hoverMenueWrap"><i class="material-icons">sentiment_satisfied</i></div>
   <div class="hoverMenueWrap"><i class="material-icons">star_border</i></div>
-  <div class="hoverMenueWrap"><i class="material-icons">edit</i></div>
-  <div class="hoverMenueWrap last"><i class="material-icons">delete_forever</i></div>
+  <div class="hoverMenueWrap" (click) ="onEdit()"><i class="material-icons">edit</i></div>
+  <div class="hoverMenueWrap last"><i class="material-icons" (click) ="onDelete()">delete_forever</i></div>
 </div>
+<!-- <div (click) ="onEdit()">Another</div> -->
