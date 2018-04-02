@@ -11,6 +11,7 @@ import { SignupComponent } from "./signup.component";
 import { LogoutComponent } from "./logout.component";
 import { authRouting } from "./auth.routing";
 import { AuthService } from "./auth.service";
+import {FileUploadModule} from "../file-upload/file-upload.module"
 
 @NgModule({
     declarations: [
@@ -28,6 +29,7 @@ import { AuthService } from "./auth.service";
         MatInputModule,
         MatMenuModule,
         MatIconModule,
+        FileUploadModule
     ],
     providers: [AuthService]
 })

@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="signupCard">
 <!-- <div class="col-md-8 col-md-offset-2">> -->
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form-container">
         <mat-form-field>
@@ -33,6 +33,7 @@
                     id="password"
                     formControlName="password">
         </mat-form-field>
+        <app-file-upload></app-file-upload>
         <button
             mat-raised-button color="accent"
             type="submit"

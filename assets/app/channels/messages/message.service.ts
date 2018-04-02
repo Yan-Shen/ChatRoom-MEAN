@@ -5,7 +5,7 @@ import { Observable } from "rxjs";
 import { ActivatedRoute, Params } from '@angular/router';
 
 import { Message } from "./message.model";
-import { ErrorService } from "../errors/error.service";
+import { ErrorService } from "../../errors/error.service";
 
 @Injectable()
 export class MessageService {
@@ -42,8 +42,6 @@ export class MessageService {
     }
 
     getMessages() {
-        // const channelId = 'channelId=' +this.channelId
-        console.log('channelId -----', this.channelId)
         return this.http.get('http://localhost:3000/message/', {params: {channelId: this.channelId}})
             .map((response: Response) => {
                 const messages = response.json().obj;

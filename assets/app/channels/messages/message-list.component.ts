@@ -6,7 +6,7 @@ import { MessageService } from "./message.service";
 @Component({
     selector: 'app-message-list',
     template: `
-        <div class="col-md-8 col-md-offset-2">
+        <div>
             <app-message
                    [message]="message"
                     *ngFor="let message of messages"></app-message>

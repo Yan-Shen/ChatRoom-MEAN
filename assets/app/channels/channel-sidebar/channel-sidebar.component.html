@@ -1,0 +1,18 @@
+<div >
+  <h2 id="chatroomName">Chatspace Name</h2>
+ <app-sidebar-user [userFirst] = "firstName"></app-sidebar-user>
+
+
+  <div class="channelLableWrap">
+    <p class="sidebarLable channelLable">channels</p>
+    <a [routerLink]="['/channels/add']">
+      <i class="material-icons iconAdd">add_circle_outline</i>
+    </a>
+</div>
+  <div
+   *ngFor="let channel of channels"
+   class="channelNameContainer">
+    <div class="channelName"> # {{ channel.name }} </div>
+  </div>
+  <p class="sidebarLable">Direct Message</p>
+</div>

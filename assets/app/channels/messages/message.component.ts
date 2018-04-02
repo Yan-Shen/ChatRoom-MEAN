@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, EventEmitter } from "@angular/core";
 
 import { Message } from "./message.model";
 import { MessageService } from "./message.service";
@@ -27,6 +27,7 @@ export class MessageComponent {
     constructor(private messageService: MessageService) {}
 
     onEdit() {
+        console.log('parent triggered')
         this.messageService.editMessage(this.message);
     }
 

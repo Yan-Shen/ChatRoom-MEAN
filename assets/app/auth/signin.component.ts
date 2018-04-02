@@ -22,6 +22,8 @@ export class SigninComponent {
                     console.log('signin data------', data)
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('userId', data.userId);
+                    localStorage.setItem('userFirstName', data.userFirstName);
+                    localStorage.setItem('userLastName', data.userLastName);
                     this.router.navigateByUrl('/channels');
                 },
                 error => console.error(error)

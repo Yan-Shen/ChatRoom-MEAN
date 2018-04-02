@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
     selector: 'app-channel-details',
@@ -9,6 +9,12 @@ import { Component } from "@angular/core";
         </div>
     `
 })
-export class ChannelDetailsComponent {
+export class ChannelDetailsComponent implements OnInit{
+  firstName: string;
 
+  constructor() {}
+
+  ngOnInit(){
+
+  }
 }

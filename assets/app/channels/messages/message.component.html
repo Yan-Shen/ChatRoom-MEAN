@@ -1,0 +1,16 @@
+<div class="messageWrap" ccMessageHover>
+    <div class="user" [class.active]="belongsToUser()">
+        {{ message.username }} :
+    </div>
+    <div class="messageContent">
+        {{ message.content }}
+    </div>
+    <app-hover-menu (editClicked)="onEdit()" (deleteClicked)="onDelete()"></app-hover-menu>
+</div>
+
+
+
+<!-- <div class="messageEditWrap" *ngIf="belongsToUser()">
+        <button (click)="onEdit()">Edit</button>
+        <button (click)="onDelete()">Delete</button>
+</div> -->

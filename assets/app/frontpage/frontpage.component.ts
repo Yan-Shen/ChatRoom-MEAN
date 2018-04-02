@@ -8,11 +8,11 @@ import { Router } from "@angular/router";
 })
 
 export class FrontpageComponent {
-    // constructor(private authService: AuthService, private router: Router){}
+    constructor(private authService: AuthService, private router: Router){}
 
-    // isLoggedIn() {
-    //     return this.authService.isLoggedIn();
-    // }
+    isLoggedIn() {
+        return this.authService.isLoggedIn();
+    }
 
     // onLogout() {
     //     this.authService.logout();

@@ -2,6 +2,7 @@ import { Http, Response, Headers } from "@angular/http";
 import { Injectable, EventEmitter } from "@angular/core";
 import 'rxjs/Rx';
 import { Observable } from "rxjs";
+import { ActivatedRoute, Params } from '@angular/router';
 
 import { Channel } from "./channel.model";
 import { ErrorService } from "../errors/error.service";
@@ -9,10 +10,13 @@ import { ErrorService } from "../errors/error.service";
 @Injectable()
 export class ChannelService {
     private channels: Channel[] = [];
-    // messageIsEdit = new EventEmitter<Channel>();
+    private channel: Channel;
+    private channelId: string;
 
-    constructor(private http: Http, private errorService: ErrorService) {
+    constructor(private http: Http, private activatedRoute: ActivatedRoute, private errorService: ErrorService ) {
+        this.activatedRoute.queryParams.subscribe(params => { this.channelId = params['channelId']; });
     }
+
 
     addChannel(channel: Channel) {
         const body = JSON.stringify(channel);
@@ -20,7 +24,6 @@ export class ChannelService {
         // const token = localStorage.getItem('token')
         //     ? '?token=' + localStorage.getItem('token')
         //     : '';
-        console.log('body is--------', body)
         return this.http.post('http://localhost:3000/channel' , body, {headers: headers})
             .map((response: Response) => {
                 const result = response.json();
@@ -57,6 +60,11 @@ export class ChannelService {
             });
     }
 
+    getChannel(channels: Channel[]){
+
+        this.channel =  channels.find(channel=> channel.channelId===this.channelId)
+        return this.channel
+    }
     // editMessage(message: Message) {
     //     this.messageIsEdit.emit(message);
     // }
@@ -88,12 +96,4 @@ export class ChannelService {
     //         });
     // }
 
-    // getChannels(){
-    //   var tempChannel1= new Channel('front end Channel1', 'https://i.ytimg.com/vi/SfLV8hD7zX4/maxresdefault.jpg')
-    //   var tempChannel2= new Channel('front end Channel2', 'https://boygeniusreport.files.wordpress.com/2016/11/puppy-dog.jpg?quality=98&strip=all&w=782')
-    //   console.log('tempChannel1---', tempChannel1)
-    //   this.channels.push(tempChannel1)
-    //   this.channels.push(tempChannel2)
-    //   return this.channels
-    // }
 }

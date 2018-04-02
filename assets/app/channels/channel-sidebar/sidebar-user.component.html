@@ -1,0 +1,21 @@
+
+<div class="userStatus"></div>
+<button mat-icon-button
+      [matMenuTriggerFor]="menu"
+      id="menuIconBtn">
+
+        <p id="userName">{{userFirst}}</p>
+</button>
+<mat-menu #menu="matMenu" overlapTrigger="false">
+    <a mat-button class="headerButton" *ngIf="isLoggedIn()"[routerLink]="['/channels']">CHANNELS</a>
+        <a mat-button class="headerButton" *ngIf="isLoggedIn()">PROFILE</a>
+    <a mat-button class="headerButton" *ngIf="!isLoggedIn()"[routerLink]="['/auth/signin']">SIGNIN</a>
+    <a mat-button
+          class="headerButton"
+          *ngIf="isLoggedIn()"
+          (click)="onLogout()"
+          [routerLink]="['/auth/logout']">
+        LOGOUT
+        </a>
+</mat-menu>
+

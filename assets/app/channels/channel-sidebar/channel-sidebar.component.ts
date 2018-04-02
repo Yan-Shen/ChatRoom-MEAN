@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
-import { Channel } from "./channel.model";
-import { ChannelService } from "./channel.service";
+import { Channel } from "../channel.model";
+import { ChannelService } from "../channel.service";
 
 @Component({
     selector: 'app-channel-sidebar',
@@ -9,6 +9,7 @@ import { ChannelService } from "./channel.service";
 })
 export class ChannelSidebarComponent implements OnInit {
     channels: Channel[];
+    firstName: string;
 
     constructor(private channelService: ChannelService) {}
 
@@ -17,7 +18,10 @@ export class ChannelSidebarComponent implements OnInit {
             .subscribe(
                 (channels: Channel[]) => {
                     this.channels = channels;
+                    console.log('channels are -----', this.channels)
                 }
             );
+
+        this.firstName = localStorage.getItem('userFirstName');
     }
 }

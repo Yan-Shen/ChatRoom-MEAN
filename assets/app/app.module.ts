@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, EventEmitter } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from "@angular/http";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -8,7 +8,7 @@ import { FormsModule} from '@angular/forms';
 import {MatButtonModule, MatCardModule} from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
-
+// import { MessageModule} from './channels/messages/message.module'
 
 import { AppComponent } from "./app.component";
 import {FrontpageComponent} from "./frontpage/frontpage.component";
@@ -23,6 +23,7 @@ import { ErrorService } from "./errors/error.service";
 import { AuthService } from "./auth/auth.service";
 
 
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -31,7 +32,8 @@ import { AuthService } from "./auth/auth.service";
         HeaderMenuFrontpageComponent,
         ErrorComponent,
         ChannelsComponent,
-        FrontpageComponent
+        FrontpageComponent,
+
     ],
     imports: [
         FormsModule,
@@ -44,6 +46,7 @@ import { AuthService } from "./auth/auth.service";
         BrowserAnimationsModule,
         MatCardModule,
         MatButtonModule,
+        // MessageModule
     ],
     // this will make error service and authservice one instance available to all components in this module
     providers: [ErrorService, AuthService],
