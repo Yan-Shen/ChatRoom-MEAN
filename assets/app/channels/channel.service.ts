@@ -21,9 +21,6 @@ export class ChannelService {
     addChannel(channel: Channel) {
         const body = JSON.stringify(channel);
         const headers = new Headers({'Content-Type': 'application/json'});
-        // const token = localStorage.getItem('token')
-        //     ? '?token=' + localStorage.getItem('token')
-        //     : '';
         return this.http.post('http://localhost:3000/channel' , body, {headers: headers})
             .map((response: Response) => {
                 const result = response.json();

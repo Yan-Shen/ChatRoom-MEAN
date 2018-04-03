@@ -33,13 +33,25 @@
                     id="password"
                     formControlName="password">
         </mat-form-field>
-        <app-file-upload></app-file-upload>
+
         <button
             mat-raised-button color="accent"
             type="submit"
             [disabled]="!myForm.valid">SIGN UP</button>
     </form>
 <!-- </div> -->
+    <div class="form-group" id="profileWrap">
+            <div for="file" id="profilePreview"><p>Profile Picture</p></div>
+            <label class="fileUploadWrap">
+            <input type="file"
+                id="image"
+                (change)="handleFileInput($event.target.files)">
+            Choose File
+            </label>
+    </div>
+    <div>
+        <button (click)="uploadFileToActivity()">Submit</button>
+    </div>
 </mat-card>
 
 

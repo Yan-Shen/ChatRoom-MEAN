@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
+var multer  = require('multer')
+var upload = multer({ dest: 'uploads/' }).single('image');
 
 var User = require('../models/user');
 
@@ -24,6 +26,25 @@ router.post('/', function (req, res, next) {
             obj: result
         });
     });
+});
+
+
+router.post('/profile', function (req, res, next) {
+    var path = '';
+    upload(req, res, function (err) {
+       if (err) {
+        return res.status(500).json({
+            title: 'An error occurred',
+            error: err
+        });
+       }
+      // No error occured.
+      console.log('req.file----', req.file)
+       path = req.file.path;
+       res.status(201).json({
+        message: "Upload Completed for "+path,
+    });
+ });
 });
 
 router.post('/signin', function(req, res, next) {
@@ -50,7 +71,9 @@ router.post('/signin', function(req, res, next) {
         res.status(200).json({
             message: 'Successfully logged in',
             token: token,
-            userId: user._id
+            userId: user._id,
+            userFirstName: user.firstName,
+            userLastName: user.lastName,
         });
     });
 });
